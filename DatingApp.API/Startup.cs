@@ -37,6 +37,7 @@ namespace DatingApp.API
             IServiceCollection serviceCollection = services.AddDbContext<DataContext>(x => x.UseSqlite(connectionString: Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddCors();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
